@@ -8,6 +8,12 @@ internal abstract class Organism
     public int X { get; set; } = 0;
     public int Y { get; set; } = 0;
 
+    public Organism(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
     public abstract void Action();
 
     public abstract void Collision();
