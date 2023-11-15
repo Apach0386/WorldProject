@@ -14,7 +14,7 @@ internal abstract class Organism
         Y = y;
     }
 
-    public abstract void Action();
+    public abstract void Action(World world);
 
     public abstract void Collision();
 
