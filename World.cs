@@ -49,7 +49,21 @@ internal class World
     }
 
     public void AddOrganism(Organism organism)
-    {
-        board[organism.Y, organism.X] = organism;
+    {        
+        if (organism.Y < 0 || organism.Y >= height ||
+            organism.X < 0 || organism.X >= width)
+        {
+            return;
+        }
+
+        if (board[organism.Y, organism.X] == null)
+        {
+            board[organism.Y, organism.X] = organism;
+            return;
+        }
+
+        organism.Collision(board[organism.Y, organism.X]);
+
+
     }
 }

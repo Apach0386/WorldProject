@@ -25,7 +25,7 @@ internal class Kosylya : Plant
         }
     }
 
-    public override void Collision()
+    public override void Collision(Organism organism)
     {
         throw new NotImplementedException();
     }

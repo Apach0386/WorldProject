@@ -16,7 +16,7 @@ internal class Grass : Plant
         world.AddOrganism(g);
     }
 
-    public override void Collision()
+    public override void Collision(Organism organism)
     {
         throw new NotImplementedException();
     }
