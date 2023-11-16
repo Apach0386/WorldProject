@@ -8,6 +8,13 @@ internal class Grass : Plant
 
     public override void Action(World world)
     {
+        int probability = Random.Shared.Next(0, 100);
+
+        if (probability < 75)
+        {
+            return;
+        }
+
         int xR = Random.Shared.Next(-1, 1);
         int yR = Random.Shared.Next(-1, 1);
 
