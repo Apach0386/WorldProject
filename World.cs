@@ -5,6 +5,7 @@ internal class World
     private int width = 0;
     private int height = 0;
 
+
     Organism[,] board;
     public World(int width, int height)
     {
@@ -64,6 +65,15 @@ internal class World
 
         organism.Collision(board[organism.Y, organism.X]);
 
+        if (organism.IsLife && board[organism.Y, organism.X].IsLife)
+        {
+            board[organism.Y, organism.X].Collision(organism);
+        }
+
+        if (!board[organism.Y, organism.X].IsLife && organism.IsLife)
+        {
+            board[organism.Y, organism.X] = organism;
+        }
 
     }
 }
