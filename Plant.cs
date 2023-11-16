@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace WorldProject
 {
-    internal class Plant
+    internal abstract class Plant : Organism
     {
+        public Plant(int x, int y) : base(x, y)
+        {
+        }
     }
 }
