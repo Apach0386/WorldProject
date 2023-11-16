@@ -2,6 +2,8 @@
 
 internal abstract class Organism
 {
+    public bool IsLife { get; set; } = true;
+
     public int Power { get; set; } = 0;
     public int Init { get; set; } = 0;
 

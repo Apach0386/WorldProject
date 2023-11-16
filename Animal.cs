@@ -11,7 +11,7 @@ internal abstract class Animal : Organism
         throw new NotImplementedException();
     }
 
-    public override void Collision()
+    public override void Collision(Organism organism)
     {
         throw new NotImplementedException();
     }
