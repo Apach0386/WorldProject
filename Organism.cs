@@ -16,7 +16,7 @@ internal abstract class Organism
         Y = y;
     }
 
-    public abstract void Action(World world);
+    public abstract bool Action(World world);
 
     public abstract void Collision(Organism organism);
 

@@ -10,13 +10,17 @@ internal class Kosylya : Plant
         return new Kosylya(x, y);
     }
 
-    public override void Action(World world)
+    public override bool Action(World world)
     {
 
         for (int i = 0; i < 3; i++)
         {
-            base.Action(world); 
+            if (base.Action(world))
+            {
+                return true;
+            }            
         }
+        return false;
     }
 
     public override void Collision(Organism organism)

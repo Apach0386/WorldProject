@@ -13,13 +13,13 @@ namespace WorldProject
         {
         }
 
-        public override void Action(World world)
+        public override bool Action(World world)
         {
             int probability = Random.Shared.Next(0, 100);
 
             if (probability < 75)
             {
-                return;
+                return false;
             }
 
             int xR = Random.Shared.Next(-1, 2);
@@ -28,6 +28,8 @@ namespace WorldProject
             Plant plant = CreateClone(this.X + xR, this.Y + yR);
 
             world.AddOrganism(plant);
+
+            return true;
         }
 
         protected abstract Plant CreateClone(int x, int y);
