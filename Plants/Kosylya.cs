@@ -30,7 +30,9 @@ internal class Kosylya : Plant
 
     public override void Draw()
     {
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
         Console.Write('K');
+        Console.ResetColor();
     }
 
 

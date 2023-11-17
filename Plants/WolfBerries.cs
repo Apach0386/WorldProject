@@ -16,7 +16,9 @@
 
         public override void Draw()
         {
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write('W');
+            Console.ResetColor();
         }
 
         protected override Plant CreateClone(int x, int y)

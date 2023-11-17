@@ -6,7 +6,7 @@ internal abstract class Animal : Organism
     {
     }
 
-    public override void Action(World world)
+    public override bool Action(World world)
     {
         throw new NotImplementedException();
     }

@@ -13,7 +13,9 @@ internal class Grass : Plant
 
     public override void Draw()
     {
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.Write('G');
+        Console.ResetColor();
     }
 
 }

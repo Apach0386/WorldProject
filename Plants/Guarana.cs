@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WorldProject.Plants
+﻿namespace WorldProject.Plants
 {
     internal class Guarana : Plant
     {
@@ -14,20 +8,22 @@ namespace WorldProject.Plants
 
         public override void Collision(Organism organism)
         {
-            if (organism is Animal) 
-            {                 
+            if (organism is Animal)
+            {
                 organism.Power += 3;
             }
         }
 
         public override void Draw()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.Write('g');
+            Console.ResetColor();
         }
 
         protected override Plant CreateClone(int x, int y)
-        {
-           return new Guarana(x, y);
+        {            
+            return new Guarana(x, y);            
         }
     }
 }
