@@ -5,6 +5,8 @@ internal class World
     private int width = 0;
     private int height = 0;
 
+    //private int countOrganism = 0;
+
 
     Organism[,] board;
     public World(int width, int height)
@@ -60,6 +62,9 @@ internal class World
         if (board[organism.Y, organism.X] == null)
         {
             board[organism.Y, organism.X] = organism;
+
+            //countOrganism++;
+
             return;
         }
 
@@ -75,5 +80,6 @@ internal class World
             board[organism.Y, organism.X] = organism;
         }
 
+        //countOrganism++;
     }
 }
