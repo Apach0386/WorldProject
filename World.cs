@@ -17,10 +17,15 @@ internal class World
     }
     public void ExecuteTure()
     {
+
         for (int i = 0; i < board.GetLength(0); i++)
         {
             for (int j = 0; j < board.GetLength(1); j++)
             {
+                if (board[i,j] is Animal animal)
+                {
+                    animal.isBorn = false;
+                }
                 board[i, j]?.Action(this);
             }
         }
@@ -52,9 +57,10 @@ internal class World
     }
 
     public void AddOrganism(Organism organism)
-    {        
-        if (organism.Y < 0 || organism.Y >= height ||
-            organism.X < 0 || organism.X >= width)
+    {
+        organism.SetWorld(this);
+
+        if (!IsValid_Y(organism.Y) || !IsValid_X(organism.X))
         {
             return;
         }
@@ -68,18 +74,43 @@ internal class World
             return;
         }
 
-        organism.Collision(board[organism.Y, organism.X]);
+        Organism boardOrganism = board[organism.Y, organism.X];
+        organism.Collision(boardOrganism);
 
-        if (organism.IsLife && board[organism.Y, organism.X].IsLife)
+        if (organism.X != boardOrganism.X || organism.Y != boardOrganism.Y)
         {
-            board[organism.Y, organism.X].Collision(organism);
+            return;
         }
 
-        if (!board[organism.Y, organism.X].IsLife && organism.IsLife)
+        if (organism.IsLife && boardOrganism.IsLife)
+        {
+            boardOrganism.Collision(organism);
+        }
+
+        if (organism.X != boardOrganism.X || organism.Y != boardOrganism.Y)
+        {
+            return;
+        }
+
+        if (boardOrganism.IsLife && organism.IsLife && IsValid_X(organism.X) && IsValid_Y(organism.Y))
         {
             board[organism.Y, organism.X] = organism;
         }
 
         //countOrganism++;
     }
+    public void ClearOrganism(int x, int y)
+    {
+        if (IsValid_X(x) && IsValid_Y(y))
+        {
+            board[y, x] = null;
+        }
+    }
+
+    public bool IsValid_X(int x) => (x >= 0 && x < width);
+
+    public bool IsValid_Y(int y) => (y >= 0 && y < height);
+
+
+
 }
