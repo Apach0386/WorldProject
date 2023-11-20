@@ -2,6 +2,8 @@
 
 internal abstract class Organism
 {
+    protected World world;
+
     public bool IsLife { get; set; } = true;
 
     public int Power { get; set; } = 0;
@@ -21,5 +23,10 @@ internal abstract class Organism
     public abstract void Collision(Organism organism);
 
     public abstract void Draw();
+
+    public void SetWorld(World world)
+    {
+        this.world = world;
+    }
 
 }
