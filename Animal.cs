@@ -2,6 +2,9 @@
 
 internal abstract class Animal : Organism
 {
+    public int prevX;
+    public int prevY;
+
     public bool isBorn = false;
     public Animal(int x, int y) : base(x, y)
     {
@@ -9,6 +12,9 @@ internal abstract class Animal : Organism
 
     public override bool Action(World world)
     {
+        prevX = this.X;
+        prevY = this.Y;
+
         this.world = world;
 
         world.ClearOrganism(this.X, this.Y);
