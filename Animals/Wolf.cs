@@ -5,7 +5,7 @@ internal class Wolf : Animal
 
     public Wolf(int x, int y) : base(x, y)
     {
-        Power = 15;
+        Power = 9;
         Init = 5;
     }
 

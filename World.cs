@@ -111,6 +111,10 @@ internal class World
 
     public bool IsValid_Y(int y) => (y >= 0 && y < height);
 
-
+    public Organism GetOrganism(int x, int y)
+    {
+         return board[y, x]; 
+    }
+        
 
 }
