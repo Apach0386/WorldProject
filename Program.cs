@@ -2,29 +2,24 @@
 using WorldProject.Animals;
 using WorldProject.Plants;
 
-World w = new World(20,10);
+World w = new World(40,20);
 
 w.DrawWorld();
-//w.AddOrganism(new Grass(5, 5));
-//w.AddOrganism(new Kosylya(8, 7));
-//w.AddOrganism(new Guarana(7, 8));
-//w.AddOrganism(new WolfBerries(1,1));
+w.AddOrganism(new Grass(6, 6));
+w.AddOrganism(new Kosylya(8, 7));
+w.AddOrganism(new Guarana(7, 8));
+w.AddOrganism(new WolfBerries(10, 19));
 
-w.AddOrganism(new Wolf(5, 5));
-w.AddOrganism(new Wolf(5, 5));
-w.AddOrganism(new Wolf(5, 5));
-w.AddOrganism(new Wolf(5, 5));
-
-w.AddOrganism(new Turtle(4, 4));
-w.AddOrganism(new Turtle(4, 4));
-w.AddOrganism(new Turtle(4, 4));
-w.AddOrganism(new Turtle(4, 4));
+w.AddOrganism(new Wolf(11, 11));
+w.AddOrganism(new Wolf(11, 11));
 
 
-w.AddOrganism(new Fox(1, 1));
-w.AddOrganism(new Fox(1, 1));
-w.AddOrganism(new Fox(1, 1));
-w.AddOrganism(new Fox(1, 1));
+w.AddOrganism(new Turtle(14, 14));
+w.AddOrganism(new Turtle(14, 14));
+
+
+w.AddOrganism(new Fox(13, 13));
+w.AddOrganism(new Fox(13, 13));
 
 
 
