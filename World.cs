@@ -75,7 +75,7 @@ internal class World
         }
 
         Organism boardOrganism = board[organism.Y, organism.X];
-        organism.Collision(boardOrganism);
+        InitAttac(organism, boardOrganism);
 
         if (organism.X != boardOrganism.X || organism.Y != boardOrganism.Y)
         {
@@ -84,7 +84,7 @@ internal class World
 
         if (organism.IsLife && boardOrganism.IsLife)
         {
-            boardOrganism.Collision(organism);
+            InitAttacSecond(organism, boardOrganism);
         }
 
         if (organism.X != boardOrganism.X || organism.Y != boardOrganism.Y)
@@ -114,6 +114,30 @@ internal class World
     public Organism GetOrganism(int x, int y)
     {
          return board[y, x]; 
+    }
+
+    public void InitAttac(Organism organism_0, Organism organism_1)
+    {
+        if (organism_0.Init > organism_1.Init)
+        {
+            organism_0.Collision(organism_1);
+        }
+        else
+        {
+            organism_1.Collision(organism_0);
+        }
+    }
+
+    public void InitAttacSecond(Organism organism_0, Organism organism_1)
+    {
+        if (organism_0.Init > organism_1.Init)
+        {
+            organism_1.Collision(organism_0);
+        }
+        else
+        {
+            organism_0.Collision(organism_1);
+        }
     }
         
 
